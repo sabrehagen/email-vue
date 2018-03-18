@@ -1,0 +1,6 @@
+<div class="message-list">
+    <div class="message-list-tools">
+        <input class="search-input" type="text" v-model="searchQuery" />
+    </div>
+    <message-list-item v-for="(message, i) in getMessages()" v-bind:message="message" v-bind:data="data" :key="i"></message-list-item>
+</div>

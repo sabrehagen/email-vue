@@ -1,0 +1,17 @@
+<div class="single-message">
+
+
+    <span class="message-from" v-html="data.activeMessage.from"></span>
+    <span class="message-subject" v-html="data.activeMessage.subject"></span>
+    <div class="message-body" v-html="data.activeMessage.body"></div>
+    <transition name="fade">
+        <div class="single-message-reply" v-if="replying">
+            <textarea v-model="messageReply"></textarea>
+            <button @click.self.stop="doReply">Reply</button>
+        </div>
+    </transition>
+    <div class="single-message-tools">
+        <a href="#" @click="back">Back</a>
+        <a class="reply-link" href="#" title="Reply" @click.prevent.self.stop="reply" v-if="!replying">Reply</a>
+    </div>
+</div>

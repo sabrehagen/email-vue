@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf8" />
+        <script type="text/javascript" src="dist/index.js" defer></script>
+        <style type="text/css">
+        html, body {
+            padding: 0;
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .message-list {
+            padding: 5px;
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        .message-list-item {
+            margin: 5px 0;
+            cursor: pointer;
+        }
+
+        .message-list-item:nth-child(odd) {
+            background: #DDDDDD;
+        }
+
+        .message-list-item-unread {
+            font-weight: bold;
+        }
+
+        .message-body {
+            margin: 5px 0 5px 10px;
+        }
+
+        .fade-enter,
+        .fade-leave-to {
+            opacity: 0;
+        }
+
+        .fade-enter-active,
+        .fade-leave-active {
+            transition-property: opacity;
+            transition-timing-function: ease-in-out;
+            transition-duration: 0.6s;
+        }
+
+    </style>
+    </head>
+    <body>
+        <div class="app-container">
+            <transition name="fade">
+                <component :is="data.mainView" ref="mainView" v-bind:data="data"></component>
+            </transition>
+        </div>
+    </body>
+</html>

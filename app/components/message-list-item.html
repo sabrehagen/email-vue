@@ -1,0 +1,7 @@
+<div :class="['message-list-item', {'message-list-item-unread': message.unread && !active}]" @click="showMessage(message)">
+    <!-- <template v-if="!active"> -->
+        <span class="message-from" v-html="message.from"></span>
+        <span class="message-subject" v-html="getSubject()"></span>
+    <!-- </template> -->
+    <!-- <single-message v-bind:message="message" v-else></single-message> -->
+</div>
